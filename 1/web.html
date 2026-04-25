@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WHITE & CO.</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="web.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="logo" onclick="showHome()">WHITE & CO.</div>
+
+    <div class="links">
+      <a href="#home" onclick="showHome()">HOME</a>
+      <a href="#shop" onclick="showHome()">SHOP</a>
+      <a href="#about" onclick="showHome()">ABOUT</a>
+    </div>
+
+    <div class="cart" id="cart-count">🛒 0</div>
+  </div>
+
+  <!-- HOME PAGE -->
+  <div id="home-page">
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <h1>TIMELESS ESSENTIALS</h1>
+      <p>Minimal fashion for modern life</p>
+
+      <button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
+        SHOP NOW
+      </button>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <h2>ABOUT WHITE & CO.</h2>
+      <p>WHITE & CO. is a modern fashion brand focused on minimal design.</p>
+      <p>Premium quality, clean aesthetics, timeless style.</p>
+    </section>
+
+    <!-- SHOP -->
+    <section id="shop">
+      <h2>SHOP COLLECTION</h2>
+
+      <div class="grid">
+        <div class="card" onclick="openProduct('Classic Shirt', '$45', 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80', 'Clean black shirt for everyday wear with a minimal premium look.')">
+          <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80" alt="Classic Shirt">
+          </div>
+          <p>Classic Shirt</p>
+          <span>$45</span>
+        </div>
+
+        <div class="card" onclick="openProduct('Minimal Jacket', '$120', 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=900&q=80', 'Minimal black jacket with a clean silhouette and premium feel.')">
+          <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=900&q=80" alt="Minimal Jacket">
+          </div>
+          <p>Minimal Jacket</p>
+          <span>$120</span>
+        </div>
+
+        <div class="card" onclick="openProduct('Relaxed Pants', '$70', 'https://images.unsplash.com/photo-1506629905607-c52b1d0d4f2d?auto=format&fit=crop&w=900&q=80', 'Relaxed black pants designed for comfort and clean styling.')">
+          <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1506629905607-c52b1d0d4f2d?auto=format&fit=crop&w=900&q=80" alt="Relaxed Pants">
+          </div>
+          <p>Relaxed Pants</p>
+          <span>$70</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- MORE PRODUCTS -->
+    <section>
+      <div class="grid">
+        <div class="card" onclick="openProduct('Oversized Tee', '$39', 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=900&q=80', 'Soft black oversized tee with a clean and modern feel.')">
+          <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=900&q=80" alt="Oversized Tee">
+          </div>
+          <p>Oversized Tee</p>
+          <span>$39</span>
+        </div>
+
+        <div class="card" onclick="openProduct('New Season Jacket', '$150', 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=80', 'New season black jacket with a strong structured look.')">
+          <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=80" alt="New Season Jacket">
+          </div>
+          <p>New Season Jacket</p>
+          <span>$150</span>
+        </div>
+
+        <div class="card" onclick="openProduct('Urban Set', '$95', 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80', 'A clean black urban set with a modern minimal aesthetic.')">
+          <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80" alt="Urban Set">
+          </div>
+          <p>Urban Set</p>
+          <span>$95</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="socials">
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://web.whatsapp.com/" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <p>© 2026 WHITE & CO.</p>
+    </footer>
+  </div>
+
+  <!-- PRODUCT VIEW -->
+  <div id="product-view" class="product-view">
+    <button class="back-btn" onclick="showHome()">← BACK</button>
+
+    <div class="product-page">
+      <div class="product-image">
+        <div class="product-image-box">
+          <img id="product-img" src="" alt="Product image">
+        </div>
+      </div>
+
+      <div class="product-details">
+        <h1 id="product-name"></h1>
+        <p class="price" id="product-price"></p>
+        <p class="description" id="product-description"></p>
+
+        <h3>Select Size</h3>
+        <div class="sizes">
+          <button class="size-btn" onclick="selectSize(this,'S')">S</button>
+          <button class="size-btn" onclick="selectSize(this,'M')">M</button>
+          <button class="size-btn" onclick="selectSize(this,'L')">L</button>
+          <button class="size-btn" onclick="selectSize(this,'XL')">XL</button>
+        </div>
+
+        <button class="add-cart" onclick="addToCart()">ADD TO CART</button>
+
+        <a class="whatsapp-btn" href="https://web.whatsapp.com/" target="_blank">
+          ORDER ON WHATSAPP
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let cart = 0;
+    let size = "";
+    let product = "";
+
+    function openProduct(n, p, i, d) {
+      document.getElementById("home-page").style.display = "none";
+      document.getElementById("product-view").style.display = "block";
+
+      document.getElementById("product-name").innerText = n;
+      document.getElementById("product-price").innerText = p;
+      document.getElementById("product-img").src = i;
+      document.getElementById("product-img").alt = n;
+      document.getElementById("product-description").innerText = d;
+
+      product = n;
+      size = "";
+
+      document.querySelectorAll(".size-btn").forEach(b => b.classList.remove("active"));
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function showHome() {
+      document.getElementById("product-view").style.display = "none";
+      document.getElementById("home-page").style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function selectSize(btn, s) {
+      document.querySelectorAll(".size-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      size = s;
+    }
+
+    function addToCart() {
+      if (size === "") {
+        alert("Select size");
+        return;
+      }
+      cart++;
+      document.getElementById("cart-count").innerText = "🛒 " + cart;
+    }
+  </script>
+
+</body>
+</html>
